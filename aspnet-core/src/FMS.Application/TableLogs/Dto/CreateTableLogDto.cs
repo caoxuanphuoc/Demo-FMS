@@ -9,6 +9,6 @@ namespace FMS.TableLogs.Dto
     public class CreateTableLogDto 
     {
         public long TableId { get; set; }
-      //  public StatusT StatusTable { get; set; } = StatusT.Waiting;
+        public StatusT StatusTable { get; set; } = StatusT.Waiting;
     }
 }
