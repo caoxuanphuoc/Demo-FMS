@@ -3,12 +3,12 @@ using Abp.AutoMapper;
 using FMS.Foods;
 using System;
 
-namespace FMS.Orders
+namespace FMS.Orders.Dto
 {
-    [AutoMapTo(typeof(Order))]
-    public class UpdateOrderDto: EntityDto<long>
+    [AutoMapFrom(typeof(Order))]
+    public class OrderDto : EntityDto<long>
     {
-        public StatusOrder OrderStatus { get; set; }
+        public string OrderStatus { get; set; }
         public DateTime DateTime { get; set; }
         public long Gross { get; set; }
     }

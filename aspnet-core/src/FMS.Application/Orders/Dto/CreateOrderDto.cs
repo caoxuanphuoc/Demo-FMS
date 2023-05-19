@@ -2,7 +2,7 @@
 using FMS.Foods;
 using System;
 
-namespace FMS.Orders
+namespace FMS.Orders.Dto
 {
     [AutoMapTo(typeof(Order))]
     public class CreateOrderDto

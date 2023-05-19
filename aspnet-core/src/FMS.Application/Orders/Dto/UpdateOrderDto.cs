@@ -1,15 +1,14 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using FMS.Foods;
-using FMS.Orders;
 using System;
 
-namespace FMS.Orders
+namespace FMS.Orders.Dto
 {
-    [AutoMapFrom(typeof(Order))]
-    public class OrderDto : EntityDto<long>
+    [AutoMapTo(typeof(Order))]
+    public class UpdateOrderDto : EntityDto<long>
     {
-        public string OrderStatus { get; set; }
+        public StatusOrder OrderStatus { get; set; }
         public DateTime DateTime { get; set; }
         public long Gross { get; set; }
     }
