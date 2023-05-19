@@ -4,6 +4,8 @@ import UserStore from './userStore';
 import SessionStore from './sessionStore';
 import AuthenticationStore from './authenticationStore';
 import AccountStore from './accountStore';
+import TableStore from './tableStore';
+import FoodStore from './foodStore';
 
 export default function initializeStores() {
   return {
@@ -13,5 +15,7 @@ export default function initializeStores() {
     userStore: new UserStore(),
     sessionStore: new SessionStore(),
     accountStore: new AccountStore(),
+    tableStore: new TableStore(),
+    foodStore: new FoodStore(),
   };
 }
