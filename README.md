@@ -1,37 +1,30 @@
-# Important
-
-Issues of this repository are tracked on https://github.com/aspnetboilerplate/aspnetboilerplate. Please create your issues on https://github.com/aspnetboilerplate/aspnetboilerplate/issues.
-
+# ỐC ĐẢO QUÁN (FMS)
 # Introduction
-
-This is a template to create **ASP.NET Core MVC / Angular** based startup projects for [ASP.NET Boilerplate](https://aspnetboilerplate.com/Pages/Documents). It has 2 different versions:
-
-1. [ASP.NET Core MVC & jQuery](https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Core) (server rendered multi-page application).
-2. [ASP.NET Core & Angular](https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Angular) (single page application).
- 
-User Interface is based on [AdminLTE theme](https://github.com/ColorlibHQ/AdminLTE).
+    Sử dụng design pattern DDD (Domain driven Partten)
+    Phân Domain theo các miền sau:
+        + Order
+            + Order: Lưu đơn
+            + Order Detail: Lưu chi tiết các món trong hóa đơn
+        + Table
+            + Table: Lưu số bàn của quán
+            + Table Log: Lưu trữ trạng thái của bàn theo thời gian
+        + Food
+            + Food: Thức ăn, thức uống trong quán
+            + Formula: Công thức để làm ra món ăn 
+            + Material: Nguyên liệu làm ra món ăn
+# Struct Project
+    + Application: Chứa đựng các service sử dụng chuẩn Resfull API cho các bảng ở trên
+    + Core: Khởi tạo các model nhằm xây dụng các service và xây dựng database
+    + EntityFrameWork: Lưu trử, quản lý các mặt về database
+## Note
+    Dự án được xậy dựng dựa trên Template của ASP FrameWork
+    Link: https://aspnetboilerplate.com/
+    Những phần template hỗ trợ bao gồm:
+        + Include login, register, user
+        + Role and tenant management pages.
  
 # Download
 
 Create & download your project from https://aspnetboilerplate.com/Templates
 
-# Screenshots
 
-#### Sample Dashboard Page
-![](_screenshots/module-zero-core-template-ui-home.png)
-
-#### User Creation Modal
-![](_screenshots/module-zero-core-template-ui-user-create-modal.png)
-
-#### Login Page
-
-![](_screenshots/module-zero-core-template-ui-login.png)
-
-# Documentation
-
-* [ASP.NET Core MVC & jQuery version.](https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Core)
-* [ASP.NET Core & Angular  version.](https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Angular)
-
-# License
-
-[MIT](LICENSE).
