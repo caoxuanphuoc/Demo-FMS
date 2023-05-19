@@ -14,4 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\FMS.Core\FMS.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Orders\Dto\" />
+  </ItemGroup>
 </Project>

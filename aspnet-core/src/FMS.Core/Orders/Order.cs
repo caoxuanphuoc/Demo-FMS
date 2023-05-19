@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FMS.Order
+namespace FMS.Orders
 {
-    public class Orders: FullAuditedEntity<long>
+    public class Order: FullAuditedEntity<long>
     {
-        public string OrderStatus { get; set; }
+        public StatusOrder OrderStatus { get; set; }
         public DateTime DateTime { get; set; }
         public long Gross { get; set; }
     }

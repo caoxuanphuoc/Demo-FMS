@@ -1,4 +1,5 @@
-﻿using Abp.Application.Services.Dto;
+﻿
+using Abp.Application.Services.Dto;
 using Abp.Domain.Entities.Auditing;
 using FMS.Foods;
 using FMS.Tables;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FMS.Order
+namespace FMS.Orders
 {
     /// <summary>
     /// Use to store data  for process handle order of customer
@@ -17,7 +18,7 @@ namespace FMS.Order
     {
     // Order
         public long OrderId { get; set; }   
-        public Orders Order { get; set; }
+        public Order Order { get; set; }
     // Food
         public long FoodId { get; set; }
         public Food Foods { get; set; }
@@ -26,6 +27,7 @@ namespace FMS.Order
         public long TableId { get; set; }
         public Table Table { get; set; }
         public int Quantity { get; set; }   
+        public StatusOrder StatusOrderDetail { get; set; }
         public DateTime CreatedDate { get; set;}
     }
 }
