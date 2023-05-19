@@ -1,15 +1,15 @@
 ﻿using Abp.Application.Services.Dto;
-using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+using Abp.AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FMS.Foods
+namespace FMS.Foods.Dto
 {
-    public class Food : FullAuditedEntity<long>
+    [AutoMapTo(typeof(Food))]
+    public class UpdateFoodDto : EntityDto<long>
     {
         public string Name { get; set; }
         public string Description { get; set; }
