@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities.Auditing;
+using Abp.Timing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,11 @@ namespace FMS.Tables
     {
         public long TableId { get; set; }
         public Table Table { get; set; }
-        public StatusT StatusTable { get; set; }
+        public StatusT StatusTable { get; set; } 
+        public TableLog()
+        {
+            CreationTime = Clock.Now;
+            StatusTable = StatusT.Waiting;
+        }
     }
 }
