@@ -16,7 +16,7 @@ export const userRouter: any = [
     title: 'LogIn',
     component: LoadableComponent(() => import('../../scenes/Login')),
     showInMenu: false,
-  },
+  }
 ];
 
 export const appRouters: any = [
@@ -47,6 +47,24 @@ export const appRouters: any = [
     icon: UserOutlined,
     showInMenu: true,
     component: LoadableComponent(() => import('../../scenes/Users')),
+  },
+  {
+    path: '/tables',
+    permission: 'Pages.Users',
+    title: 'Tables',
+    name: 'Table',
+    icon: UserOutlined,
+    showInMenu: true,
+    component: LoadableComponent(() => import('../../scenes/Tables')),
+  },
+  {
+    path: '/tables/Orders',
+    permission: 'Pages.Users',
+    title: 'Orders',
+    name: 'Order',
+    icon: UserOutlined,
+    showInMenu: false,
+    component: LoadableComponent(() => import('../../scenes/Foods')),
   },
   {
     path: '/roles',
@@ -91,6 +109,7 @@ export const appRouters: any = [
     showInMenu: false,
     component: LoadableComponent(() => import('../../scenes/Exception')),
   },
+ 
 ];
 
 export const routers = [...userRouter, ...appRouters];
