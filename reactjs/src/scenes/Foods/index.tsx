@@ -52,7 +52,32 @@ class Food extends AppComponentBase<IFoodProps, IFoodState>{
         { title: L('Food Name'), dataIndex: 'name', key: 'name', width: '15%', render: (text: string) => <div>{text}</div> },
         { title: L('Description'), dataIndex: 'description', key: 'description', width: '15%', render: (text: string) => <div>{text}</div> },
         { title: L('Price'), dataIndex: 'price', key: 'price', width: '15%', render: (text: string) => <div>{text}</div> },
-        ]
+        {
+            title: L('Actions'),
+            width: '15%',
+            render: (text: string, item: any) => (
+              <div>
+                <button>-</button>
+                    <p>6</p>
+                <button>+</button>
+                {/* <Dropdown
+                  trigger={['click']}
+                  overlay={
+                    <Menu>
+                      <Menu.Item onClick={() => this.createOrUpdateModalOpen({ id: item.id })}>{L('Edit')}</Menu.Item>
+                      <Menu.Item onClick={() => this.delete({ id: item.id })}>{L('Delete')}</Menu.Item>
+                    </Menu>
+                  }
+                  placement="bottomLeft"
+                >
+                  <Button type="primary" icon={<SettingOutlined />}>
+                    {L('Actions')}
+                  </Button>
+                </Dropdown> */}
+              </div>
+            ),
+          }
+    ]
         return(
             <Table
             rowKey={(record) => record.id.toString()}

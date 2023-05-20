@@ -8,7 +8,7 @@ import { GetAllTableDetailOutput } from '../../services/table/dto/getAllTableDat
 import Food from '../Foods';
 import FoodStore from '../../stores/foodStore';
 import { ArrowLeftOutlined } from '@ant-design/icons';
-
+import './index.less';
 
 export interface ITableProps {
     tableStore: TableStore;
@@ -87,14 +87,15 @@ class Table extends AppComponentBase<ITableProps, ITableState>{
                                   type={option.state === 'None'? "primary" : option.state === 'OK' ? "ghost"  :"dashed"}>
                                    {option.name}
                                 </Button> */}
-                                        <Tag key={"button" + option.id} style={{ width: '80px' }}
+                                        <Tag key={"button" + option.id} style={{ width: '80px' ,cursor: "pointer"}}
                                             color={
                                                 option.state === 'OK' ? 'Green' :
-                                                    option.state === 'Waitting' ? 'Gold' :
+                                                    option.state === 'Waiting' ? 'Gold' :
                                                         option.state === 'None' ? '#1890ff' :
                                                             'Red'
                                             }
                                             onClick={e => this.ShowMenu(option)}
+                                           className='shadow-left'
                                         >
                                             {option.name}
                                         </Tag>
@@ -125,8 +126,8 @@ class Table extends AppComponentBase<ITableProps, ITableState>{
                             </Food>
                         </Col>
                         {/* Bill */}
-                        <Col  style={{width: "30%" }}>
-                            <Card style={{width: "100%"}}>
+                        <Col  style={{width: "30%",  marginTop: "3%" }}>
+                            <Card style={{width: "100%", marginLeft: '5%'}}>
                                 bill
                             </Card>
                         </Col>
