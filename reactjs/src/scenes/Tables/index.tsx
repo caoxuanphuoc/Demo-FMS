@@ -7,8 +7,8 @@ import { Card, Row, Divider, Col, Tag } from 'antd';
 import { GetAllTableDetailOutput } from '../../services/table/dto/getAllTableDatailOuput';
 import Food from '../Foods';
 import FoodStore from '../../stores/foodStore';
-import { ArrowLeftOutlined } from '@ant-design/icons';
 import './index.less';
+import { ArrowLeftOutlined } from '@ant-design/icons';
 
 export interface ITableProps {
     tableStore: TableStore;
@@ -64,7 +64,7 @@ class Table extends AppComponentBase<ITableProps, ITableState>{
         await this.props.tableStore.getAll({ maxResultCount: this.state.maxResultCount, skipCount: this.state.skipCount, keyword: this.state.filter });
     }
     ShowMenu(record: any) {
-        console.log("hi", record)
+        //console.log("hi", record)
         this.setState({
             currentTable: record.id,
             modalVisible: !this.state.modalVisible
@@ -87,7 +87,7 @@ class Table extends AppComponentBase<ITableProps, ITableState>{
                                   type={option.state === 'None'? "primary" : option.state === 'OK' ? "ghost"  :"dashed"}>
                                    {option.name}
                                 </Button> */}
-                                        <Tag key={"button" + option.id} style={{ width: '80px' ,cursor: "pointer"}}
+                                        <Tag key={"button" + option.id} style={{ width: '80px', cursor: "pointer" }}
                                             color={
                                                 option.state === 'OK' ? 'Green' :
                                                     option.state === 'Waiting' ? 'Gold' :
@@ -95,7 +95,7 @@ class Table extends AppComponentBase<ITableProps, ITableState>{
                                                             'Red'
                                             }
                                             onClick={e => this.ShowMenu(option)}
-                                           className='shadow-left'
+                                            className='shadow-left'
                                         >
                                             {option.name}
                                         </Tag>
@@ -106,33 +106,34 @@ class Table extends AppComponentBase<ITableProps, ITableState>{
                                 : null
                         }
                     </Row>
+                    <Row style={{ paddingLeft: '35%', paddingTop: "8%"}}>
+                        <Card style={{backgroundColor :'#eef1fa'}}>
+                            <Tag color='Green'> Đủ món</Tag>
+                            <Tag color='Gold'> Đang chờ</Tag>
+                            <Tag color='#1890ff'> Bàn trống</Tag>
+                            <Tag color='Red'> Chờ thanh toán</Tag>
+
+                        </Card>
+                    </Row>
                 </Card>
                 :
                 <Card>
                     <Row>
-                    <ArrowLeftOutlined   onClick={e => { this.setState({modalVisible: !this.state.modalVisible})}}/>
+                        <Col style={{alignItems: 'center'}}>
+                        <ArrowLeftOutlined  onClick={e => { this.setState({ modalVisible: !this.state.modalVisible }) }} />
+                        </Col>
+                        <Col style={{paddingLeft: '20%'}}>
+                        <h2>{"Table " + this.state.currentTable.toString()}</h2>
+                        </Col>
                     </Row>
                     <Row>
-                        {/* menu */}
-                        <Col
-                            style={{width: "70%", marginTop: "3%"}}
-                        >
-                            <Food
-                            IdTable={ this.state.currentTable}
-                            foodStore={ this.props.foodStore}
-                            
-                            >
-
-                            </Food>
-                        </Col>
-                        {/* Bill */}
-                        <Col  style={{width: "30%",  marginTop: "3%" }}>
-                            <Card style={{width: "100%", marginLeft: '5%'}}>
-                                bill
-                            </Card>
-                        </Col>
+                        <Food
+                            IdTable={this.state.currentTable}
+                            foodStore={this.props.foodStore}
+                        ></Food>
                     </Row>
                 </Card>
+
         )
     }
 }
