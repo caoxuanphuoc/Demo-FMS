@@ -25,7 +25,7 @@ const SiderMenu = (props: ISiderMenuProps) => {
     <Sider trigger={null} className={'sidebar'} width={210} collapsible collapsed={collapsed} onCollapse={onCollapse}>
       {collapsed ? (
         <Col style={{ textAlign: 'center', marginTop: 15, marginBottom: 50 }}>
-          <Avatar shape="square" style={{ height: 10, width: 10, paddingTop: 5 }} src={AbpLogo} />
+          <Avatar shape="square" style={{ height: 50, width: 50, paddingTop: 5 }} src={AbpLogo} />
         </Col>
       ) : (
         <Col style={{ textAlign: 'center', marginTop: '10px', marginBottom: 10 }}>

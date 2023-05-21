@@ -58,6 +58,15 @@ export const appRouters: any = [
     component: LoadableComponent(() => import('../../scenes/Tables')),
   },
   {
+    path: '/foods',
+    permission: 'Pages.Users',
+    title:'Foods',
+    name: 'Food',
+    icon: UserOutlined,
+    showInMenu: true,
+    component: LoadableComponent(() => import('../../scenes/ShowFood')),
+  },
+  {
     path: '/tables/Orders',
     permission: 'Pages.Users',
     title: 'Orders',
